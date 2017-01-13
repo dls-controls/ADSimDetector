@@ -9,7 +9,6 @@ envPaths*
 cdCommands*
 dllPath*
 auto_settings.sav*
-configure/*.local
 O.*/
 *~
 *.swp
@@ -17,3 +16,5 @@ O.*/
 .settings
 .cproject
 external/
+iocs/
+data/
