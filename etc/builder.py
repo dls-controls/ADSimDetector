@@ -6,7 +6,6 @@ from iocbuilder.arginfo import *
 from iocbuilder.modules.asyn import Asyn, AsynPort, AsynIP
 from iocbuilder.modules.busy import Busy
 from iocbuilder.modules.calc import Calc
-from iocbuilder.modules.ADBinaries import ADBinaries
 from iocbuilder.modules.ADCore import ADCore, ADBaseTemplate, makeTemplateInstance, includesTemplates, NDDataTypes
 
 __all__ = ['simDetector']
