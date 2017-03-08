@@ -1,6 +1,6 @@
 # The following definitions must be changed for each site
 
-# These following four base definitions are overwritten by definitions in 
+# These following four base definitions are overwritten by definitions in
 # the RELEASE.<arch>.Common files. Included here for information only.
 # SUPPORT         = /dls_sw/prod/R3.14.12.3/support
 # WORK            = /dls_sw/work/R3.14.12.3/support
@@ -15,10 +15,10 @@
 # $(SUPPORT), $(AREA_DETECTOR), and $(EPICS_BASE) must be defined in RELEASE.local or
 # RELEASE.local.$(EPICS_HOST_ARCH).
 
-TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+TEMPLATE_TOP = $(EPICS_BASE)/templates/makeBaseApp/top
 
 # ASYN is needed for base classes
-ASYN=$(SUPPORT)/asyn/4-26
+ASYN = $(WORK)/asyn
 
 # ADCORE is needed for areaDetector base classes
-ADCORE=$(SUPPORT)/ADCore/2-4dls6
+ADCORE = $(WORK)/ADCore
