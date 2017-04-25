@@ -19,3 +19,4 @@ external/
 iocs/
 data/
 .idea/
+cmake-build*/
