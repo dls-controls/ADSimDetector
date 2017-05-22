@@ -18,7 +18,7 @@
 TEMPLATE_TOP = $(EPICS_BASE)/templates/makeBaseApp/top
 
 # ASYN is needed for base classes
-ASYN = $(WORK)/asyn
+ASYN = $(SUPPORT)/asyn/4-31
 
 # ADCORE is needed for areaDetector base classes
-ADCORE = $(WORK)/ADCore
+ADCORE = $(SUPPORT)/ADCore/2-6dls1
