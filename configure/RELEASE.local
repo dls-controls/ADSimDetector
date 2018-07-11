@@ -2,10 +2,10 @@
 
 # These following four base definitions are overwritten by definitions in
 # the RELEASE.<arch>.Common files. Included here for information only.
-# SUPPORT         = /dls_sw/prod/R3.14.12.3/support
-# WORK            = /dls_sw/work/R3.14.12.3/support
-# AREA_DETECTOR   = /dls_sw/work/R3.14.12.3/support
-# EPICS_BASE      = /dls_sw/epics/R3.14.12.3/base
+# SUPPORT         = /dls_sw/prod/R3.14.12.7/support
+# WORK            = /dls_sw/work/R3.14.12.7/support
+# AREA_DETECTOR   = /dls_sw/work/R3.14.12.7/support
+# EPICS_BASE      = /dls_sw/epics/R3.14.12.7/base
 
 
 # Note:
@@ -18,7 +18,7 @@
 TEMPLATE_TOP = $(EPICS_BASE)/templates/makeBaseApp/top
 
 # ASYN is needed for base classes
-ASYN = $(SUPPORT)/asyn/4-31
+ASYN = $(SUPPORT)/asyn/4-33
 
 # ADCORE is needed for areaDetector base classes
-ADCORE = $(SUPPORT)/ADCore/2-6dls5
+ADCORE = $(WORK)/ADCore
