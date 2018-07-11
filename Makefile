@@ -8,6 +8,13 @@ ifeq ($(BUILD_IOCS), YES)
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocs))
 iocs_DEPEND_DIRS += simDetectorApp
 endif
+
+# DLS configuration: etc dir for iocbuilder stuff
+ifeq ($(EPICS_HOST_ARCH),linux-x86_64)
+DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard etc))
+iocs_DEPENDS_DIRS += etc
+endif
+
 include $(TOP)/configure/RULES_TOP
 
 uninstall: uninstall_iocs
