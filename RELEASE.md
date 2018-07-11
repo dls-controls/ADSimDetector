@@ -34,6 +34,34 @@ files respectively, in the configure/ directory of the appropriate release of th
 Release Notes
 =============
 
+R2-8 (July 1, 2018)
+===================
+* Changed Makefile to use addprefix to add -I to user-defined include file directory paths
+* Fixed so it builds OK if WITH_HDF5=NO.
+* Changed simDetector.adl to have the new records from ADCore R3-3.
+* Updated the edl, ui, and opi autoconvert directories to contain the conversions
+  from the most recent adl files and improved converters.
+* Fixed comments in the files in the iocBoot directories.  Thanks to Lewis Muir for this.
+
+
+R2-7 (January 28, 2018)
+========================
+* Fixed simDetectorNoIOCApp/src/Makefile so it handles external locations of HDF, SZIP, and XML2 correctly.
+* Add simDetectorApp/op/Makefile to automatically convert adl files to edl, ui, and opi.
+* Fixed medm adl files to improve the autoconversion to other display manager files.
+* Added op/Makefile to automatically convert adl files to edl, ui, and opi files.
+* Updated the edl, ui, and opi autoconvert directories to contain the conversions
+  from the most recent adl files.
+
+
+R2-6 (July 4, 2017)
+========================
+* Change startup scripts in iocSimDetector.  st.cmd now loads envPaths and st_base.cmd, so it can be
+  run with no copying of files.  st.cmd.linux and st.cmd.windows can still be used for conveniently
+  switching host architectures in the same directory by copying envPaths to envPaths.linux or envPaths.windows
+  as appropriate.
+
+
 R2-5 (May 5, 2017)
 ========================
 * Removed parameter counting from driver, not needed with asyn R4-31.
