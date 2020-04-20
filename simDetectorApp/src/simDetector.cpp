@@ -1006,7 +1006,8 @@ void simDetector::report(FILE *fp, int details)
 simDetector::simDetector(const char *portName, int maxSizeX, int maxSizeY, NDDataType_t dataType,
                          int maxBuffers, size_t maxMemory, int priority, int stackSize)
 
-    : ADDriver(portName, 1, 0, maxBuffers, maxMemory,
+    : ADDriver(static_cast<ADDriverParamSet*>(this),  /* Upcast to provide ADDriver with its param set */
+               portName, 1, 0, maxBuffers, maxMemory,
                0, 0, /* No interfaces beyond those set in ADDriver.cpp */
                0, 1, /* ASYN_CANBLOCK=0, ASYN_MULTIDEVICE=0, autoConnect=1 */
                priority, stackSize),
@@ -1031,38 +1032,6 @@ simDetector::simDetector(const char *portName, int maxSizeX, int maxSizeY, NDDat
         return;
     }
 
-    createParam(SimGainXString,               asynParamFloat64, &SimGainX);
-    createParam(SimGainYString,               asynParamFloat64, &SimGainY);
-    createParam(SimGainRedString,             asynParamFloat64, &SimGainRed);
-    createParam(SimGainGreenString,           asynParamFloat64, &SimGainGreen);
-    createParam(SimGainBlueString,            asynParamFloat64, &SimGainBlue);
-    createParam(SimOffsetString,              asynParamFloat64, &SimOffset);
-    createParam(SimNoiseString,               asynParamFloat64, &SimNoise);
-    createParam(SimResetImageString,          asynParamInt32,   &SimResetImage);
-    createParam(SimModeString,                asynParamInt32,   &SimMode);
-    createParam(SimPeakStartXString,          asynParamInt32,   &SimPeakStartX);
-    createParam(SimPeakStartYString,          asynParamInt32,   &SimPeakStartY);
-    createParam(SimPeakWidthXString,          asynParamInt32,   &SimPeakWidthX);
-    createParam(SimPeakWidthYString,          asynParamInt32,   &SimPeakWidthY);
-    createParam(SimPeakNumXString,            asynParamInt32,   &SimPeakNumX);
-    createParam(SimPeakNumYString,            asynParamInt32,   &SimPeakNumY);
-    createParam(SimPeakStepXString,           asynParamInt32,   &SimPeakStepX);
-    createParam(SimPeakStepYString,           asynParamInt32,   &SimPeakStepY);
-    createParam(SimPeakHeightVariationString, asynParamFloat64, &SimPeakHeightVariation);
-    createParam(SimXSineOperationString,      asynParamInt32,   &SimXSineOperation);
-    createParam(SimYSineOperationString,      asynParamInt32,   &SimYSineOperation);
-    createParam(SimXSine1AmplitudeString,     asynParamFloat64, &SimXSine1Amplitude);
-    createParam(SimXSine1FrequencyString,     asynParamFloat64, &SimXSine1Frequency);
-    createParam(SimXSine1PhaseString,         asynParamFloat64, &SimXSine1Phase);
-    createParam(SimXSine2AmplitudeString,     asynParamFloat64, &SimXSine2Amplitude);
-    createParam(SimXSine2FrequencyString,     asynParamFloat64, &SimXSine2Frequency);
-    createParam(SimXSine2PhaseString,         asynParamFloat64, &SimXSine2Phase);
-    createParam(SimYSine1AmplitudeString,     asynParamFloat64, &SimYSine1Amplitude);
-    createParam(SimYSine1FrequencyString,     asynParamFloat64, &SimYSine1Frequency);
-    createParam(SimYSine1PhaseString,         asynParamFloat64, &SimYSine1Phase);
-    createParam(SimYSine2AmplitudeString,     asynParamFloat64, &SimYSine2Amplitude);
-    createParam(SimYSine2FrequencyString,     asynParamFloat64, &SimYSine2Frequency);
-    createParam(SimYSine2PhaseString,         asynParamFloat64, &SimYSine2Phase);
 
     /* Set some default values for parameters */
     status =  setStringParam (ADManufacturer, "Simulated detector");

@@ -12,6 +12,7 @@ ifeq (vxWorks,$(findstring vxWorks, $(T_A)))
 CODE_CXXFLAGS=
 endif
 
+INC += simDetectorParamSet.h
 INC += simDetector.h
 
 LIBRARY_IOC = simDetector
