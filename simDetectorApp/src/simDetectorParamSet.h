@@ -80,7 +80,6 @@ public:
     int SimGainRed;
     int SimGainGreen;
     int SimGainBlue;
-    int simOffset;
     int SimNoise;
     int SimResetImage;
     int SimMode;
